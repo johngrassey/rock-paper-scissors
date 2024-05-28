@@ -1,3 +1,8 @@
+// Create variable humanScore and computerScore
+
+let humanScore = 0;
+let computerScore = 0;
+
 // Create function called getComputerChoice
 
 function getComputerChoice() {
