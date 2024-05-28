@@ -27,9 +27,20 @@ function getComputerChoice() {
 
     // Return computerChoice
     return computerChoice
+}
 
-};
+// Create function called getHumanChoice
+function getHumanChoice() {
 
+    // Ask the user to "Rock, Paper, Scissors?" store it in new variable, humanChoice
+    let humanChoice = prompt("Rock, Paper, Scissors?","");
+
+    // Return variable humanChoice
+    return humanChoice;
+}
+
+//Print computerChoice to console
+console.log(getHumanChoice());
 
 // Print computerChoice to console
 console.log(getComputerChoice());
