@@ -77,14 +77,14 @@ function playRound(humanChoice, computerChoice) {
         };   
 
     } else {
-        if (computerChoice === "rock") { console.log("Paper beats Rock. You win!");
-            console.log("Scissors beats Paper. You win!");
+        if (computerChoice === "rock") {
+            console.log("Paper beats Rock. You win!");
             humanScore += 1;
 
         } else if (computerChoice === "scissors") {
             console.log("Scissors beats paper. You lose!");
             computerScore += 1;
-            
+
         } else {
             console.log("You both played Paper. It's a tie!");
         };   
