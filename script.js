@@ -1,5 +1,7 @@
 let buttons = document.querySelectorAll("button");
 let results = document.querySelector(".results");
+let userScoreDisplay = document.querySelector(".userscore");
+let compScoreDisplay = document.querySelector(".computerscore");
 
 let humanScore = 0;
 let computerScore = 0;
@@ -31,9 +33,11 @@ function playRound(humanChoice, computerChoice) {
     } else if ( humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" ) {
         results.textContent = "The computer played " + computerChoice + ". " + humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1) + " beats " + computerChoice + ". You win!";
         humanScore += 1;
+        userScoreDisplay.textContent = humanScore.toString();
     } else {
         results.textContent = "The computer played " + computerChoice + ". " + computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1) + " beats " + humanChoice + ". You lose!";
-        computerScore += 1;;
+        computerScore += 1;
+        compScoreDisplay.textContent = computerScore.toString();
     };
 
 }
