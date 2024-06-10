@@ -58,24 +58,6 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-// function playGame() {
-
-//     playRound(getHumanChoice(), getComputerChoice());
-//     // playRound(getHumanChoice(),getComputerChoice());
-//     // playRound(getHumanChoice(),getComputerChoice());
-//     // playRound(getHumanChoice(),getComputerChoice());
-//     // playRound(getHumanChoice(),getComputerChoice());
-
-//     if (humanScore > computerScore) {
-//         console.log("You win the game!");
-//     } else if (humanScore < computerScore) {
-//         console.log("You lose the game!");
-//     } else {
-//         console.log("It's a tie!");
-//     };
-
-// }
-
 function endGame() {
     if (humanScore === 5) {
         endOfGame.textContent = "GAME OVER: You Win!";
@@ -83,7 +65,6 @@ function endGame() {
         endOfGame.textContent = "GAME OVER: You lose";
     };
 };
-
 
 let rock = document.querySelector(".rock");
 let paper = document.querySelector(".paper");
@@ -104,5 +85,3 @@ scissors.addEventListener("click", () => {
     let computerChoice = getComputerChoice();
     playRound(humanChoice, computerChoice);
 });
-
-// playGame();
