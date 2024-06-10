@@ -2,9 +2,13 @@ let buttons = document.querySelectorAll("button");
 let results = document.querySelector(".results");
 let userScoreDisplay = document.querySelector(".userscore");
 let compScoreDisplay = document.querySelector(".computerscore");
+let endOfGame = document.querySelector(".endgame");
 
 let humanScore = 0;
 let computerScore = 0;
+
+userScoreDisplay.textContent = humanScore.toString();
+compScoreDisplay.textContent = computerScore.toString();
 
 function getComputerChoice() {
 
@@ -30,14 +34,19 @@ function playRound(humanChoice, computerChoice) {
 
     if (humanChoice === computerChoice) {
         results.textContent = "The computer played " + computerChoice + ". It's a tie!";
-    } else if ( humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" ) {
+    } else if ( humanChoice === "rock" && computerChoice === "scissors" ||
+                humanChoice === "scissors" && computerChoice === "paper" ||
+                humanChoice === "paper" && computerChoice === "rock") {
+
         results.textContent = "The computer played " + computerChoice + ". " + humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1) + " beats " + computerChoice + ". You win!";
         humanScore += 1;
         userScoreDisplay.textContent = humanScore.toString();
+        endGame();
     } else {
         results.textContent = "The computer played " + computerChoice + ". " + computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1) + " beats " + humanChoice + ". You lose!";
         computerScore += 1;
         compScoreDisplay.textContent = computerScore.toString();
+        endGame();
     };
 
 }
@@ -59,6 +68,15 @@ function playRound(humanChoice, computerChoice) {
 //     };
 
 // }
+
+function endGame() {
+    if (humanScore === 5) {
+        endOfGame.textContent = "GAME OVER: You Win!";
+    } else if (computerScore === 5) {
+        endOfGame.textContent = "GAME OVER: You lose";
+    };
+};
+
 
 let rock = document.querySelector(".rock");
 let paper = document.querySelector(".paper");
