@@ -1,5 +1,8 @@
 let buttons = document.querySelectorAll("button");
-let results = document.querySelector(".results");
+let compResults = document.querySelector(".compresults");
+let userResults = document.querySelector(".userresults");
+let resultsMessage = document.querySelector(".resultsmessage");
+
 let userScoreDisplay = document.querySelector(".userscore");
 let compScoreDisplay = document.querySelector(".computerscore");
 let endOfGame = document.querySelector(".endgame");
@@ -23,8 +26,6 @@ function getComputerChoice() {
         computerChoice = "scissors";
     };
 
- 
-
     return computerChoice
 }
 
@@ -33,17 +34,23 @@ function playRound(humanChoice, computerChoice) {
     humanChoice = String(humanChoice).toLowerCase();
 
     if (humanChoice === computerChoice) {
-        results.textContent = "The computer played " + computerChoice + ". It's a tie!";
+        compResults.textContent = "The computer played " + computerChoice + "."
+        userResults.textContent = "You played " + humanChoice + "."
+        resultsMessage.textContent = "It's a tie!";
     } else if ( humanChoice === "rock" && computerChoice === "scissors" ||
                 humanChoice === "scissors" && computerChoice === "paper" ||
                 humanChoice === "paper" && computerChoice === "rock") {
 
-        results.textContent = "The computer played " + computerChoice + ". " + humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1) + " beats " + computerChoice + ". You win!";
+        compResults.textContent = "The computer played " + computerChoice + "."
+        userResults.textContent = "You played " + humanChoice + "."
+        resultsMessage.textContent = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1) + " beats " + computerChoice + ". You win!";
         humanScore += 1;
         userScoreDisplay.textContent = humanScore.toString();
         endGame();
     } else {
-        results.textContent = "The computer played " + computerChoice + ". " + computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1) + " beats " + humanChoice + ". You lose!";
+        compResults.textContent = "The computer played " + computerChoice + "."
+        userResults.textContent = "You played " + humanChoice + "."
+        resultsMessage.textContent = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1) + " beats " + humanChoice + ". You lose!";
         computerScore += 1;
         compScoreDisplay.textContent = computerScore.toString();
         endGame();
