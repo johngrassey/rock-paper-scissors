@@ -1,4 +1,6 @@
-// Create function called getComputerChoice
+
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
 
@@ -14,12 +16,6 @@ function getComputerChoice() {
     };
 
     return computerChoice
-}
-
-function getHumanChoice() {
-
-    let humanChoice = prompt("Rock, Paper, Scissors?","");
-    return humanChoice;
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -39,25 +35,37 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-function playGame() {
+// function playGame() {
 
-    playRound(getHumanChoice(),getComputerChoice());
-    playRound(getHumanChoice(),getComputerChoice());
-    playRound(getHumanChoice(),getComputerChoice());
-    playRound(getHumanChoice(),getComputerChoice());
-    playRound(getHumanChoice(),getComputerChoice());
+//     playRound(getHumanChoice(), getComputerChoice());
+//     // playRound(getHumanChoice(),getComputerChoice());
+//     // playRound(getHumanChoice(),getComputerChoice());
+//     // playRound(getHumanChoice(),getComputerChoice());
+//     // playRound(getHumanChoice(),getComputerChoice());
 
-    if (humanScore > computerScore) {
-        console.log("You win the game!");
-    } else if (humanScore < computerScore) {
-        console.log("You lose the game!");
-    } else {
-        console.log("It's a tie!");
-    };
+//     if (humanScore > computerScore) {
+//         console.log("You win the game!");
+//     } else if (humanScore < computerScore) {
+//         console.log("You lose the game!");
+//     } else {
+//         console.log("It's a tie!");
+//     };
+
+// }
+
+// let rock = document.querySelector(".rock");
+// let paper = document.querySelector(".paper");
+// let scissors = document.querySelector(".scissors");
+
+let buttons = document.querySelectorAll("button");
+
+for (button of buttons) {
+    button.addEventListener("click", () => {
+        let humanChoice = button.className;
+        let computerChoice = getComputerChoice();
+        playRound(humanChoice,computerChoice);
+    });
 
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
-playGame();
+// playGame();
