@@ -1,4 +1,3 @@
-let buttons = document.querySelectorAll("button");
 let compResults = document.querySelector(".compresults");
 let userResults = document.querySelector(".userresults");
 let resultsMessage = document.querySelector(".resultsmessage");
@@ -30,8 +29,6 @@ function getComputerChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-
-    humanChoice = String(humanChoice).toLowerCase();
 
     if (humanChoice === computerChoice) {
         compResults.textContent = "The computer played " + computerChoice + "."
